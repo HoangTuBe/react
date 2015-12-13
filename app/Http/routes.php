@@ -12,5 +12,9 @@
 */
 
 $app->get('/', function () use ($app) {
-    return $app->welcome();
+    return view('index');
 });
+
+$app->get('/api/comments', 'CommentController@index');
+
+$app->post('/api/comments', 'CommentController@store');
